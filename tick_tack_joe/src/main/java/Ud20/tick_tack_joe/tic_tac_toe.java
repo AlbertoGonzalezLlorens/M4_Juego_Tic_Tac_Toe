@@ -33,6 +33,7 @@ public class tic_tac_toe extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	JLabel lblNewLabel = new JLabel("");
+	private final List<JToggleButton> list = new ArrayList<JToggleButton>();
 	/**
 	 * Launch the application.
 	 */
@@ -55,13 +56,45 @@ public class tic_tac_toe extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(3, 3, 0, 0));
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setForeground(new Color(128, 128, 255));
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		panel_2.setBounds(10, 111, 287, 102);
+		panel_1.add(panel_2);
+		panel_2.setLayout(null);
+		
+		JPanel panel_2_1 = new JPanel();
+		panel_2_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		panel_2_1.setBounds(10, 245, 287, 176);
+		panel_1.add(panel_2_1);
+		panel_2_1.setLayout(null);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Humano");
+		rdbtnNewRadioButton.setSelected(true);
+		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		rdbtnNewRadioButton.setBounds(93, 118, 79, 21);
+		panel_2_1.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("CPU");
+		rdbtnNewRadioButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		rdbtnNewRadioButton_1.setBounds(205, 116, 60, 21);
+		panel_2_1.add(rdbtnNewRadioButton_1);
+		
 		JToggleButton tglbtnNewToggleButton = new JToggleButton("");
 		tglbtnNewToggleButton.setEnabled(false);
 		tglbtnNewToggleButton.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				boton.interaccionBoton(0,0, tglbtnNewToggleButton, textField, textField_1, lblNewLabel);
-				
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(0,0, tglbtnNewToggleButton, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(0,0, tglbtnNewToggleButton, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}			
 			}
 		});
 		tglbtnNewToggleButton.setBackground(new Color(255, 255, 255));
@@ -72,8 +105,12 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_3.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton.interaccionBoton(0,1, tglbtnNewToggleButton_3, textField, textField_1, lblNewLabel);
-				
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(0,1, tglbtnNewToggleButton_3, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(0,1, tglbtnNewToggleButton_3, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}
 			}
 		});
 		tglbtnNewToggleButton_3.setBackground(new Color(255, 255, 255));
@@ -84,8 +121,12 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_6.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton.interaccionBoton(0,2, tglbtnNewToggleButton_6, textField, textField_1, lblNewLabel);
-				
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(0,2, tglbtnNewToggleButton_6, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(0,2, tglbtnNewToggleButton_6, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}
 			}
 		});
 		tglbtnNewToggleButton_6.setBackground(new Color(255, 255, 255));
@@ -96,8 +137,12 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_1.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton.interaccionBoton(1,0, tglbtnNewToggleButton_1, textField, textField_1, lblNewLabel);
-				
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(1,0, tglbtnNewToggleButton_1, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(1,0, tglbtnNewToggleButton_1, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}
 			}
 		});
 		tglbtnNewToggleButton_1.setBackground(new Color(255, 255, 255));
@@ -108,7 +153,12 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_2.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton.interaccionBoton(1,1, tglbtnNewToggleButton_2, textField, textField_1, lblNewLabel);
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(1,1, tglbtnNewToggleButton_2, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(1,1, tglbtnNewToggleButton_2, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}
 				
 			}
 		});
@@ -120,7 +170,12 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_4.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton.interaccionBoton(1,2, tglbtnNewToggleButton_4, textField, textField_1, lblNewLabel);
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(1,2, tglbtnNewToggleButton_4, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(1,2, tglbtnNewToggleButton_4, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}
 				
 			}
 		});
@@ -132,7 +187,12 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_5.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton.interaccionBoton(2,0, tglbtnNewToggleButton_5, textField, textField_1, lblNewLabel);
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(2,0, tglbtnNewToggleButton_5, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(2,0, tglbtnNewToggleButton_5, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}
 				
 			}
 		});
@@ -144,7 +204,12 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_7.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton.interaccionBoton(2,1, tglbtnNewToggleButton_7, textField, textField_1, lblNewLabel);
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(2,1, tglbtnNewToggleButton_7, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(2,1, tglbtnNewToggleButton_7, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}
 				
 			}
 		});
@@ -156,23 +221,17 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_8.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boton.interaccionBoton(2,2, tglbtnNewToggleButton_8, textField, textField_1, lblNewLabel);
+				if(rdbtnNewRadioButton.isSelected()) {
+					boton.interaccionBoton(2,2, tglbtnNewToggleButton_8, textField, textField_1, lblNewLabel);
+				}else if(rdbtnNewRadioButton_1.isSelected()) {
+					boton.interaccionBotonXCpu(2,2, tglbtnNewToggleButton_8, textField, textField_1, lblNewLabel);
+					boton.interaccionBotonOCpu(textField, textField_1, lblNewLabel,list);
+				}
 				
 			}
 		});
 		tglbtnNewToggleButton_8.setBackground(new Color(255, 255, 255));
 		panel.add(tglbtnNewToggleButton_8);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setForeground(new Color(128, 128, 255));
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel_2.setBounds(10, 111, 287, 102);
-		panel_1.add(panel_2);
-		panel_2.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("Jugador 1");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -189,12 +248,6 @@ public class tic_tac_toe extends JFrame {
 		textField.setBounds(93, 47, 121, 17);
 		panel_2.add(textField);
 		textField.setColumns(10);
-		
-		JPanel panel_2_1 = new JPanel();
-		panel_2_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel_2_1.setBounds(10, 245, 287, 176);
-		panel_1.add(panel_2_1);
-		panel_2_1.setLayout(null);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Jugador 2");
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -216,16 +269,6 @@ public class tic_tac_toe extends JFrame {
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_3.setBounds(23, 118, 60, 17);
 		panel_2_1.add(lblNewLabel_3);
-		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Humano");
-		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		rdbtnNewRadioButton.setBounds(93, 118, 79, 21);
-		panel_2_1.add(rdbtnNewRadioButton);
-		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("CPU");
-		rdbtnNewRadioButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		rdbtnNewRadioButton_1.setBounds(205, 116, 60, 21);
-		panel_2_1.add(rdbtnNewRadioButton_1);
 		
 		JButton btnNewButton = new JButton("Nueva Partida");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -269,5 +312,16 @@ public class tic_tac_toe extends JFrame {
 		ButtonGroup bgroup = new ButtonGroup();
 		bgroup.add(rdbtnNewRadioButton);
 		bgroup.add(rdbtnNewRadioButton_1);
+		
+		list.add(tglbtnNewToggleButton);
+		list.add(tglbtnNewToggleButton_1);
+		list.add(tglbtnNewToggleButton_2);
+		list.add(tglbtnNewToggleButton_3);
+		list.add(tglbtnNewToggleButton_4);
+		list.add(tglbtnNewToggleButton_5);
+		list.add(tglbtnNewToggleButton_6);
+		list.add(tglbtnNewToggleButton_7);
+		list.add(tglbtnNewToggleButton_8);
+		
 	}
 }
