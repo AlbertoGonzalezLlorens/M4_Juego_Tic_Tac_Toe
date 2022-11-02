@@ -22,6 +22,7 @@ import javax.swing.border.BevelBorder;
 public class tic_tac_toe extends JFrame {
 
 	private JPanel contentPane;
+	PulsarBoton boton = new PulsarBoton();
 	/**
 	 * Launch the application.
 	 */
@@ -48,8 +49,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tglbtnNewToggleButton.setText("X");
-				
+				boton.interaccionBoton(0,0, tglbtnNewToggleButton);
 			}
 		});
 		tglbtnNewToggleButton.setBackground(new Color(255, 255, 255));
@@ -59,6 +59,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_3.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boton.interaccionBoton(0,1, tglbtnNewToggleButton_3);
 			}
 		});
 		tglbtnNewToggleButton_3.setBackground(new Color(255, 255, 255));
@@ -68,6 +69,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_6.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boton.interaccionBoton(0,2, tglbtnNewToggleButton_6);
 			}
 		});
 		tglbtnNewToggleButton_6.setBackground(new Color(255, 255, 255));
@@ -77,6 +79,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_1.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boton.interaccionBoton(1,0, tglbtnNewToggleButton_1);
 			}
 		});
 		tglbtnNewToggleButton_1.setBackground(new Color(255, 255, 255));
@@ -86,6 +89,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_2.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boton.interaccionBoton(1,1, tglbtnNewToggleButton_2);
 			}
 		});
 		tglbtnNewToggleButton_2.setBackground(new Color(255, 255, 255));
@@ -95,6 +99,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_4.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boton.interaccionBoton(1,2, tglbtnNewToggleButton_4);
 			}
 		});
 		tglbtnNewToggleButton_4.setBackground(new Color(255, 255, 255));
@@ -104,6 +109,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_5.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boton.interaccionBoton(2,0, tglbtnNewToggleButton_5);
 			}
 		});
 		tglbtnNewToggleButton_5.setBackground(new Color(255, 255, 255));
@@ -113,6 +119,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_7.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boton.interaccionBoton(2,1, tglbtnNewToggleButton_7);
 			}
 		});
 		tglbtnNewToggleButton_7.setBackground(new Color(255, 255, 255));
@@ -122,6 +129,7 @@ public class tic_tac_toe extends JFrame {
 		tglbtnNewToggleButton_8.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tglbtnNewToggleButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boton.interaccionBoton(2,2, tglbtnNewToggleButton_8);
 			}
 		});
 		tglbtnNewToggleButton_8.setBackground(new Color(255, 255, 255));
